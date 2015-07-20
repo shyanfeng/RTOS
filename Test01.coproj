@@ -70,6 +70,7 @@
   <Components path="./"/>
   <LocalComponents/>
   <Files>
+    <File name="Mailbox.c" path="app/Mailbox.c" type="1"/>
     <File name="assembly.s" path="app/assembly.s" type="1"/>
     <File name="Task.c" path="app/Task.c" type="1"/>
     <File name="Hardware" path="" type="2"/>
@@ -85,21 +86,26 @@
     <File name="Hardware/stm32f4xx_hal_cortex.c" path="../STM32Cube_FW_F4_V1.5.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" type="1"/>
     <File name="Scheduler.s" path="app/Scheduler.s" type="1"/>
     <File name="Task.h" path="app/Task.h" type="1"/>
+    <File name="Semaphore.c" path="app/Semaphore.c" type="1"/>
     <File name="system_stm32f4xx.c" path="../STM32Cube_FW_F4_V1.5.0/Projects/STM32F4-Discovery/Templates/Src/system_stm32f4xx.c" type="1"/>
     <File name="Hardware/stm32f4xx_hal_rcc.h" path="app/stm32f4xx_hal_rcc.h" type="1"/>
     <File name="SD5.c" path="app/SD5.c" type="1"/>
     <File name="Hardware/stm32f4xx_hal.c" path="../STM32Cube_FW_F4_V1.5.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" type="1"/>
+    <File name="Mutex.c" path="app/Mutex.c" type="1"/>
+    <File name="Mutex.h" path="app/Mutex.h" type="1"/>
     <File name="main.h" path="app/main.h" type="1"/>
     <File name="stm32f4xx_it.c" path="../Test01/app/stm32f4xx_it.c" type="1"/>
     <File name="timeDelay.c" path="app/timeDelay.c" type="1"/>
-    <File name="SD6.h" path="app/SD6.h" type="1"/>
     <File name="stm32f4xx_hal_conf.h" path="app/stm32f4xx_hal_conf.h" type="1"/>
+    <File name="SD6.h" path="app/SD6.h" type="1"/>
     <File name="Hardware/stm32f4xx_hal_gpio.c" path="../STM32Cube_FW_F4_V1.5.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" type="1"/>
     <File name="Core/core_cm4.h" path="../STM32Cube_FW_F4_V1.5.0/Drivers/CMSIS/Include/core_cm4.h" type="1"/>
+    <File name="Mailbox.h" path="app/Mailbox.h" type="1"/>
     <File name="SD2.c" path="app/SD2.c" type="1"/>
     <File name="SD1.h" path="app/SD1.h" type="1"/>
     <File name="RunningLight.c" path="app/RunningLight.c" type="1"/>
     <File name="Hardware/stm32f4xx_hal_def.h" path="../STM32Cube_FW_F4_V1.5.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h" type="1"/>
+    <File name="Semaphore.h" path="app/Semaphore.h" type="1"/>
     <File name="SD6.c" path="app/SD6.c" type="1"/>
     <File name="Hardware/stm32f4xx_hal_cortex.h" path="../STM32Cube_FW_F4_V1.5.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h" type="1"/>
     <File name="Hardware/stm32f4xx_hal_gpio.h" path="../STM32Cube_FW_F4_V1.5.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h" type="1"/>

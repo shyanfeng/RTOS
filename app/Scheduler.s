@@ -55,19 +55,26 @@ SysTick_Handler:
 
  ldr	r0, = readyQueue	// Load taskOneTcb into r0
  ldr	r1, [r0]			// Deref r0 and load taskOneTcb address into r1
- ldr	r2, [r1, #4]		// Deref (r1+4) and load into r2
+ ldr	r2, [r1, #4]		// Deref (address of sp) and load into r2
+ ldr	sp, [r1, #4]
 
- ldr    r4, [r2, #4]
- ldr    r5, [r2, #8]
- ldr    r6, [r2, #12]
- ldr    r7, [r2, #16]
- ldr    r8, [r2, #20]
- ldr    r9, [r2, #24]
- ldr    r10, [r2, #28]
- ldr    r11, [r2, #32]
-
+ pop	{r4-r11}
+ pop	{r0-r3}
+ pop	{r12}
+ bx		lr
+ //pop	{pc}
+ /*
+ ldr    r4, [r2, #0]
+ ldr    r5, [r2, #4]
+ ldr    r6, [r2, #8]
+ ldr    r7, [r2, #12]
+ ldr    r8, [r2, #16]
+ ldr    r9, [r2, #20]
+ ldr    r10, [r2, #24]
+ ldr    r11, [r2, #28]
  ldr	pc, [r2, #56]
  bx		lr
+ */
  /*push 	{r7, lr}
  add	r7, sp, #0
  bl  	HAL_IncTick

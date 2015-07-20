@@ -9,6 +9,7 @@ Tcb taskOneTcb;
 Tcb taskTwoTcb;
 Tcb *readyQueue;
 Tcb *runningQueue;
+Tcb runningTcb;
 
 CpuContext *cc = (CpuContext *)((uint32_t)(&taskOneStack[1028]) - sizeof(CpuContext));
 
@@ -24,7 +25,6 @@ void initTcb(){
   mainTcb.sp = 0x12345678;
   taskOneTcb.name = "thread #1";
   taskOneTcb.sp = (uint32_t)cc;
-
 
   cc->R4 = 0xaaaaaaa4;
   cc->R5 = 0xbbbbbbb5;

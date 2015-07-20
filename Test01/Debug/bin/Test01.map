@@ -26,6 +26,7 @@ readyQueue          0x4               ..\obj\Task.o
 taskOneTcb          0x8               ..\obj\Task.o
 taskTwoStack        0x404             ..\obj\Task.o
 mainTcb             0x8               ..\obj\Task.o
+runningTcb          0x8               ..\obj\Task.o
 taskOneStack        0x404             ..\obj\Task.o
 
 Discarded input sections
@@ -94,6 +95,18 @@ Discarded input sections
  .debug_frame   0x00000000       0x34 c:/program files/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libc.a(lib_a-__atexit.o)
  .ARM.attributes
                 0x00000000       0x2e c:/program files/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m\libc.a(lib_a-__atexit.o)
+ .text          0x00000000        0x0 ..\obj\Mailbox.o
+ .data          0x00000000        0x0 ..\obj\Mailbox.o
+ .bss           0x00000000        0x0 ..\obj\Mailbox.o
+ .debug_info    0x00000000       0x21 ..\obj\Mailbox.o
+ .debug_abbrev  0x00000000       0x19 ..\obj\Mailbox.o
+ .debug_aranges
+                0x00000000       0x18 ..\obj\Mailbox.o
+ .debug_line    0x00000000       0x1d ..\obj\Mailbox.o
+ .debug_str     0x00000000       0xab ..\obj\Mailbox.o
+ .comment       0x00000000       0x71 ..\obj\Mailbox.o
+ .ARM.attributes
+                0x00000000       0x33 ..\obj\Mailbox.o
  .text          0x00000000        0x0 ..\obj\assembly.o
  .data          0x00000000        0x0 ..\obj\assembly.o
  .bss           0x00000000        0x0 ..\obj\assembly.o
@@ -131,6 +144,18 @@ Discarded input sections
  .text          0x00000000        0x0 ..\obj\Scheduler.o
  .data          0x00000000        0x0 ..\obj\Scheduler.o
  .bss           0x00000000        0x0 ..\obj\Scheduler.o
+ .text          0x00000000        0x0 ..\obj\Semaphore.o
+ .data          0x00000000        0x0 ..\obj\Semaphore.o
+ .bss           0x00000000        0x0 ..\obj\Semaphore.o
+ .debug_info    0x00000000       0x21 ..\obj\Semaphore.o
+ .debug_abbrev  0x00000000       0x19 ..\obj\Semaphore.o
+ .debug_aranges
+                0x00000000       0x18 ..\obj\Semaphore.o
+ .debug_line    0x00000000       0x1d ..\obj\Semaphore.o
+ .debug_str     0x00000000       0xad ..\obj\Semaphore.o
+ .comment       0x00000000       0x71 ..\obj\Semaphore.o
+ .ARM.attributes
+                0x00000000       0x33 ..\obj\Semaphore.o
  .bss           0x00000000        0x0 ..\obj\system_stm32f4xx.o
  .text          0x00000000      0x128 ..\obj\SD5.o
  .data          0x00000000        0x0 ..\obj\SD5.o
@@ -158,6 +183,19 @@ Discarded input sections
  .debug_frame   0x00000000      0x310 ..\obj\stm32f4xx_hal.o
  .ARM.attributes
                 0x00000000       0x33 ..\obj\stm32f4xx_hal.o
+ .text          0x00000000       0x24 ..\obj\Mutex.o
+ .data          0x00000000        0x0 ..\obj\Mutex.o
+ .bss           0x00000000        0x0 ..\obj\Mutex.o
+ .debug_info    0x00000000       0xad ..\obj\Mutex.o
+ .debug_abbrev  0x00000000       0x40 ..\obj\Mutex.o
+ .debug_aranges
+                0x00000000       0x20 ..\obj\Mutex.o
+ .debug_line    0x00000000       0x72 ..\obj\Mutex.o
+ .debug_str     0x00000000      0x1a4 ..\obj\Mutex.o
+ .comment       0x00000000       0x71 ..\obj\Mutex.o
+ .debug_frame   0x00000000       0x70 ..\obj\Mutex.o
+ .ARM.attributes
+                0x00000000       0x33 ..\obj\Mutex.o
  .data          0x00000000        0x0 ..\obj\stm32f4xx_it.o
  .bss           0x00000000        0x0 ..\obj\stm32f4xx_it.o
  .text          0x00000000       0x5c ..\obj\timeDelay.o
@@ -533,35 +571,36 @@ LOAD c:/program files/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-
                 0x10000000                _eccmram = .
                 0x10000000                . = ALIGN (0x4)
 
-.bss            0x20000440      0x844
+.bss            0x20000440      0x84c
                 0x20000440                _sbss = .
                 0x20000440                __bss_start__ = _sbss
  *(.bss)
  .bss           0x20000440       0x1c c:/program files/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/crtbegin.o
  *(.bss*)
  *(COMMON)
- COMMON         0x2000045c      0x828 ..\obj\Task.o
+ COMMON         0x2000045c      0x830 ..\obj\Task.o
                 0x2000045c                runningQueue
                 0x20000460                taskTwoTcb
                 0x20000468                readyQueue
                 0x2000046c                taskOneTcb
                 0x20000474                taskTwoStack
                 0x20000878                mainTcb
-                0x20000880                taskOneStack
-                0x20000c84                . = ALIGN (0x4)
-                0x20000c84                _ebss = .
-                0x20000c84                __bss_end__ = _ebss
+                0x20000880                runningTcb
+                0x20000888                taskOneStack
+                0x20000c8c                . = ALIGN (0x4)
+                0x20000c8c                _ebss = .
+                0x20000c8c                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x20000c84      0x600
-                0x20000c84                . = ALIGN (0x4)
-                0x20000c84                PROVIDE (end, .)
-                0x20000c84                PROVIDE (_end, .)
-                0x20000e84                . = (. + _Min_Heap_Size)
- *fill*         0x20000c84      0x200 
-                0x20001284                . = (. + _Min_Stack_Size)
- *fill*         0x20000e84      0x400 
-                0x20001284                . = ALIGN (0x4)
+                0x20000c8c      0x600
+                0x20000c8c                . = ALIGN (0x4)
+                0x20000c8c                PROVIDE (end, .)
+                0x20000c8c                PROVIDE (_end, .)
+                0x20000e8c                . = (. + _Min_Heap_Size)
+ *fill*         0x20000c8c      0x200 
+                0x2000128c                . = (. + _Min_Stack_Size)
+ *fill*         0x20000e8c      0x400 
+                0x2000128c                . = ALIGN (0x4)
 
 /DISCARD/
  libc.a(*)
@@ -589,14 +628,17 @@ LOAD c:/program files/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-
                 0x00000127       0x33 ..\obj\main.o
  .ARM.attributes
                 0x0000015a       0x1e c:/program files/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/crtn.o
+LOAD ..\obj\Mailbox.o
 LOAD ..\obj\assembly.o
 LOAD ..\obj\Task.o
 LOAD ..\obj\SD1.o
 LOAD ..\obj\stm32f4xx_hal_cortex.o
 LOAD ..\obj\Scheduler.o
+LOAD ..\obj\Semaphore.o
 LOAD ..\obj\system_stm32f4xx.o
 LOAD ..\obj\SD5.o
 LOAD ..\obj\stm32f4xx_hal.o
+LOAD ..\obj\Mutex.o
 LOAD ..\obj\stm32f4xx_it.o
 LOAD ..\obj\timeDelay.o
 LOAD ..\obj\stm32f4xx_hal_gpio.o
@@ -616,13 +658,13 @@ LOAD c:/program files/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-
 LOAD c:/program files/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/crtn.o
 OUTPUT(Test01.elf elf32-littlearm)
 
-.debug_info     0x00000000     0x10b3
- .debug_info    0x00000000      0x265 ..\obj\Task.o
- .debug_info    0x00000265       0xb1 ..\obj\Scheduler.o
- .debug_info    0x00000316      0x4b4 ..\obj\system_stm32f4xx.o
- .debug_info    0x000007ca      0x11e ..\obj\stm32f4xx_it.o
- .debug_info    0x000008e8       0xb7 ..\obj\startup_stm32f429xx.o
- .debug_info    0x0000099f      0x714 ..\obj\main.o
+.debug_info     0x00000000     0x10c4
+ .debug_info    0x00000000      0x276 ..\obj\Task.o
+ .debug_info    0x00000276       0xb1 ..\obj\Scheduler.o
+ .debug_info    0x00000327      0x4b4 ..\obj\system_stm32f4xx.o
+ .debug_info    0x000007db      0x11e ..\obj\stm32f4xx_it.o
+ .debug_info    0x000008f9       0xb7 ..\obj\startup_stm32f429xx.o
+ .debug_info    0x000009b0      0x714 ..\obj\main.o
 
 .debug_abbrev   0x00000000      0x408
  .debug_abbrev  0x00000000       0xe7 ..\obj\Task.o
@@ -646,22 +688,22 @@ OUTPUT(Test01.elf elf32-littlearm)
  .debug_aranges
                 0x000000a8       0x20 ..\obj\main.o
 
-.debug_line     0x00000000      0x82c
+.debug_line     0x00000000      0x827
  .debug_line    0x00000000      0x14b ..\obj\Task.o
- .debug_line    0x0000014b       0x88 ..\obj\Scheduler.o
- .debug_line    0x000001d3      0x224 ..\obj\system_stm32f4xx.o
- .debug_line    0x000003f7      0x1aa ..\obj\stm32f4xx_it.o
- .debug_line    0x000005a1       0xac ..\obj\startup_stm32f429xx.o
- .debug_line    0x0000064d      0x1df ..\obj\main.o
+ .debug_line    0x0000014b       0x83 ..\obj\Scheduler.o
+ .debug_line    0x000001ce      0x224 ..\obj\system_stm32f4xx.o
+ .debug_line    0x000003f2      0x1aa ..\obj\stm32f4xx_it.o
+ .debug_line    0x0000059c       0xac ..\obj\startup_stm32f429xx.o
+ .debug_line    0x00000648      0x1df ..\obj\main.o
 
-.debug_str      0x00000000      0xb0b
- .debug_str     0x00000000      0x191 ..\obj\Task.o
-                                0x1db (size before relaxing)
- .debug_str     0x00000191      0x244 ..\obj\system_stm32f4xx.o
+.debug_str      0x00000000      0xb16
+ .debug_str     0x00000000      0x19c ..\obj\Task.o
+                                0x1e6 (size before relaxing)
+ .debug_str     0x0000019c      0x244 ..\obj\system_stm32f4xx.o
                                 0x36d (size before relaxing)
- .debug_str     0x000003d5       0xbc ..\obj\stm32f4xx_it.o
+ .debug_str     0x000003e0       0xbc ..\obj\stm32f4xx_it.o
                                 0x1d1 (size before relaxing)
- .debug_str     0x00000491      0x67a ..\obj\main.o
+ .debug_str     0x0000049c      0x67a ..\obj\main.o
                                 0x855 (size before relaxing)
 
 .comment        0x00000000       0x70

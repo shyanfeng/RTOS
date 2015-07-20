@@ -3,19 +3,23 @@
 static uint32_t currentTime = 0;
 
 uint32_t getCurrentTime(){
-	static uint32_t counter = 0;
-	static uint32_t currentTime = 0;
-	if(counter++ >= 100){
-		counter = 0;
-		currentTime++;
-	}
-	return currentTime;
+	return HAL_GetTick();
 }
 
 int delay(uint32_t delayCycle, uint32_t previousTime){
-	if(((currentTime = getCurrentTime()) - previousTime) < delayCycle){
+	if((getCurrentTime() - previousTime) < delayCycle){
 		return 0;
 	}else{
 		return 1;
+	}
+}
+
+
+int timeNotExpired(uint32_t previousTime){
+
+	if(delay(120, previousTime)){
+		return 1;
+	}else{
+		return 0;
 	}
 }

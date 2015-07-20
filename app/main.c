@@ -6,39 +6,45 @@
 #include "SD5.h"
 #include "SD6.h"
 #include "initState.h"
+#include "Task.h"
+#include "main.h"
 
-int main(void){
-	TaskBlock tb;
-	initLED();
-	initLED2();
-	initLED5();
-	initLED6();
-	initPushButton1();
-	initTaskBlock(&tb);
+void testFunc();
 
-  while(1){
-    testing(&tb);
-    SD1();
-    SD2();
-    SD5();
-    SD6();
-  }
+void initSysTick(){
+	if(SysTick_Config(SystemCoreClock / 1000)){
+		while(1);
+	}
 }
 
-void testing(TaskBlock *tb){
-	static int here = 0;
+int dummy(int value){
+	return value * 3;
+}
 
-	startTask(tb);
-		here = 0;
-		yield(tb);
-		here = 1;
-		yield(tb);
-		here = 2;
-		yield(tb);
-		here = 3;
-		yield(tb);
-	endTask(tb);
+int main(void){
+	//TaskBlock tb_LED1;
+	//TaskBlock tb_LED2;
+	//TaskBlock tb_LED5;
+	//initLED();
+	//initLED2();
+	//initLED5();
+	//initLED6();
+	//initPushButton1();
+	//initTaskBlock(&tb_LED1);
+	//initTaskBlock(&tb_LED2);
+	//initTaskBlock(&tb_LED5);
 
+	initSysTick();
+	initTcb();
+	//taskSwitch();
+	//testFunc();
 
+  while(1){
+	//RunningLight(&tb_LED1);
+	//SD1(&tb_LED1);
+    //SD2(&tb_LED2);
+    //SD5(&tb_LED5);
+    //SD6();
+  }
 }
 

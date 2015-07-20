@@ -6,6 +6,10 @@
 #define turnOnLED6() HAL_GPIO_WritePin(GPIOC, GPIO_PIN_5, GPIO_PIN_SET)
 #define turnOffLED6() HAL_GPIO_WritePin(GPIOC, GPIO_PIN_5, GPIO_PIN_RESET)
 
+#define offLED500ms() if(delay(500, previousTime)){state = STATE_A;previousTime = updateTimer();}
+#define onLED500ms() if(delay(500, previousTime)){state = INITIAL;previousTime = updateTimer();}
+
+
 void SD6(){
 	static uint32_t previousTime = 0;
 	static STATE state = INITIAL;

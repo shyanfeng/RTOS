@@ -63,33 +63,54 @@
       <Option name="org.coocox.codebugger.gdbjtag.core.autoDownload" value="1"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
-      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="C:\Users\Student\AppData\Roaming\CooCox\CoIDE\config\flash\CooCox-Flash\CoIDE_STM32F4xx_2048K\STM32F4xx_2048.elf"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="C:\Users\D203C-01\AppData\Roaming\CooCox\CoIDE\config\flash\CooCox-Flash\CoIDE_STM32F4xx_2048K\STM32F4xx_2048.elf"/>
     </DebugOption>
     <ExcludeFile/>
   </Target>
   <Components path="./"/>
   <LocalComponents/>
   <Files>
+    <File name="assembly.s" path="app/assembly.s" type="1"/>
+    <File name="Task.c" path="app/Task.c" type="1"/>
     <File name="Hardware" path="" type="2"/>
+    <File name="initState.h" path="app/initState.h" type="1"/>
     <File name="stm32f4xx_it.h" path="app/stm32f4xx_it.h" type="1"/>
-    <File name="stm32f4xx_hal_conf.h" path="app/stm32f4xx_hal_conf.h" type="1"/>
+    <File name="SD1.c" path="app/SD1.c" type="1"/>
     <File name="Hardware/stm32f4xx_hal.h" path="../STM32Cube_FW_F4_V1.5.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h" type="1"/>
+    <File name="timeDelay.h" path="app/timeDelay.h" type="1"/>
+    <File name="system_stm32f4xx.h" path="app/system_stm32f4xx.h" type="1"/>
+    <File name="RunningLight.h" path="app/RunningLight.h" type="1"/>
+    <File name="stm32f429xx.h" path="app/stm32f429xx.h" type="1"/>
+    <File name="initGPIO.h" path="app/initGPIO.h" type="1"/>
+    <File name="Hardware/stm32f4xx_hal_cortex.c" path="../STM32Cube_FW_F4_V1.5.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" type="1"/>
+    <File name="Scheduler.s" path="app/Scheduler.s" type="1"/>
+    <File name="Task.h" path="app/Task.h" type="1"/>
+    <File name="system_stm32f4xx.c" path="../STM32Cube_FW_F4_V1.5.0/Projects/STM32F4-Discovery/Templates/Src/system_stm32f4xx.c" type="1"/>
+    <File name="Hardware/stm32f4xx_hal_rcc.h" path="app/stm32f4xx_hal_rcc.h" type="1"/>
+    <File name="SD5.c" path="app/SD5.c" type="1"/>
+    <File name="Hardware/stm32f4xx_hal.c" path="../STM32Cube_FW_F4_V1.5.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" type="1"/>
+    <File name="main.h" path="app/main.h" type="1"/>
+    <File name="stm32f4xx_it.c" path="../Test01/app/stm32f4xx_it.c" type="1"/>
+    <File name="timeDelay.c" path="app/timeDelay.c" type="1"/>
+    <File name="SD6.h" path="app/SD6.h" type="1"/>
+    <File name="stm32f4xx_hal_conf.h" path="app/stm32f4xx_hal_conf.h" type="1"/>
     <File name="Hardware/stm32f4xx_hal_gpio.c" path="../STM32Cube_FW_F4_V1.5.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" type="1"/>
     <File name="Core/core_cm4.h" path="../STM32Cube_FW_F4_V1.5.0/Drivers/CMSIS/Include/core_cm4.h" type="1"/>
-    <File name="system_stm32f4xx.h" path="app/system_stm32f4xx.h" type="1"/>
-    <File name="stm32f429xx.h" path="app/stm32f429xx.h" type="1"/>
-    <File name="Hardware/stm32f4xx_hal_cortex.c" path="../STM32Cube_FW_F4_V1.5.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" type="1"/>
+    <File name="SD2.c" path="app/SD2.c" type="1"/>
+    <File name="SD1.h" path="app/SD1.h" type="1"/>
+    <File name="RunningLight.c" path="app/RunningLight.c" type="1"/>
     <File name="Hardware/stm32f4xx_hal_def.h" path="../STM32Cube_FW_F4_V1.5.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h" type="1"/>
-    <File name="Hardware/stm32f4xx_hal_gpio.h" path="../STM32Cube_FW_F4_V1.5.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h" type="1"/>
+    <File name="SD6.c" path="app/SD6.c" type="1"/>
     <File name="Hardware/stm32f4xx_hal_cortex.h" path="../STM32Cube_FW_F4_V1.5.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h" type="1"/>
+    <File name="Hardware/stm32f4xx_hal_gpio.h" path="../STM32Cube_FW_F4_V1.5.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h" type="1"/>
+    <File name="initGPIO.c" path="app/initGPIO.c" type="1"/>
     <File name="Hardware/stm32f4xx_hal_rcc.c" path="app/stm32f4xx_hal_rcc.c" type="1"/>
-    <File name="system_stm32f4xx.c" path="../STM32Cube_FW_F4_V1.5.0/Projects/STM32F4-Discovery/Templates/Src/system_stm32f4xx.c" type="1"/>
     <File name="startup_stm32f429xx.s" path="app/startup_stm32f429xx.s" type="1"/>
-    <File name="Hardware/stm32f4xx_hal_rcc.h" path="app/stm32f4xx_hal_rcc.h" type="1"/>
     <File name="stm32f4xx.h" path="app/stm32f4xx.h" type="1"/>
     <File name="Core" path="" type="2"/>
-    <File name="Hardware/stm32f4xx_hal.c" path="../STM32Cube_FW_F4_V1.5.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" type="1"/>
     <File name="main.c" path="app/main.c" type="1"/>
+    <File name="SD2.h" path="app/SD2.h" type="1"/>
+    <File name="SD5.h" path="app/SD5.h" type="1"/>
   </Files>
   <Bookmarks/>
 </Project>

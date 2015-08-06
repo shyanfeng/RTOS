@@ -46,7 +46,12 @@ taskSwitch:
  .align 8
  .type	SysTick_Handler, %function
 SysTick_Handler:
- push	{r4-r11}			// Push all neccessary register
+ /***************************************************************
+  *
+  *                       First task
+  *
+  ***************************************************************/
+ /*push	{r4-r11}			// Push all neccessary register
 
  ldr	r0, = runningQueue	// Load mainTcb address into r0
  ldr	r1, [r0]			// Deref r0 and load mainTcb.name address into r1
@@ -62,21 +67,27 @@ SysTick_Handler:
  pop	{r0-r3}
  pop	{r12}
  bx		lr
- //pop	{pc}
- /*
- ldr    r4, [r2, #0]
- ldr    r5, [r2, #4]
- ldr    r6, [r2, #8]
- ldr    r7, [r2, #12]
- ldr    r8, [r2, #16]
- ldr    r9, [r2, #20]
- ldr    r10, [r2, #24]
- ldr    r11, [r2, #28]
- ldr	pc, [r2, #56]
- bx		lr
  */
- /*push 	{r7, lr}
- add	r7, sp, #0
- bl  	HAL_IncTick
- pop 	{r7, pc}*/
 
+ /***************************************************************
+  *
+  *                       Second task
+  *
+  ***************************************************************/
+ push	{r4-r11}			// Push all neccessary register
+
+ ldr	r4, = runningQueue	// Load mainTcb address into r4
+ ldr	r6, [r4]			// Deref r4 and load mainTcb.name address into r4
+ ldr	r7, [r4, #4]		// Deref (r1+4) and load mainTcb.sp value into r2
+ str	sp, [r4, #4]		// Deref (r1+4) and store mainTcb.sp value into sp
+ push {lr}
+ ldr	r0, = readyQueue	// Load taskOneTcb into r5
+ bl   List_removeFirst  
+ ldr  r5, [r0]
+ ldr  sp, [r5]
+ 
+ pop  {lr}
+ pop	{r4-r11}
+ pop	{r0-r3}
+ pop	{r12}
+ bx		lr

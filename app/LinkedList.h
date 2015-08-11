@@ -6,13 +6,15 @@ typedef struct Element_t{
 	int data;
 }Element;
 
-typedef struct{
+typedef struct LinkedList LinkedList;
+
+struct LinkedList{
 	Element *head;
 	Element *tail;
 	int length;
-}LinkedList;
+};
 
-LinkedList *createLinkedList();
+void createLinkedList(LinkedList *list);
 void List_addFirst(LinkedList *list, Element *elem);
 void List_addLast(LinkedList *list, Element *elem);
 Element *List_removeFirst(LinkedList *list);

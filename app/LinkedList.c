@@ -2,12 +2,10 @@
 #include <malloc.h>
 #include <stdio.h>
 
-LinkedList *createLinkedList(){
-	LinkedList *list = malloc(sizeof(LinkedList));
+void createLinkedList(LinkedList *list){
 	list->head = NULL;
 	list->tail = NULL;
 	list->length = 0;
-	return list;
 }
 
 /************************************************

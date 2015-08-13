@@ -11,6 +11,7 @@
  .extern mainTcb
  .extern readyQueue
  .extern runningQueue
+ .extern runningTcb
  
   .section  .text.taskSwitch
   .type  taskSwitch, %function
@@ -67,7 +68,7 @@ SysTick_Handler:
  pop	{r0-r3}
  pop	{r12}
  bx		lr
- */
+*/
 
  /***************************************************************
   *
@@ -76,17 +77,23 @@ SysTick_Handler:
   ***************************************************************/
  push	{r4-r11}			// Push all neccessary register
 
- ldr	r4, = runningQueue	// Load mainTcb address into r4
- ldr	r6, [r4]			// Deref r4 and load mainTcb.name address into r4
- ldr	r7, [r4, #4]		// Deref (r1+4) and load mainTcb.sp value into r2
+ ldr	r4, = runningTcb	// Load mainTcb address into r4
+ ldr	r4, [r4]			// Deref r4 and load mainTcb address into r4
  str	sp, [r4, #4]		// Deref (r1+4) and store mainTcb.sp value into sp
- push {lr}
- ldr	r0, = readyQueue	// Load taskOneTcb into r5
- bl   List_removeFirst  
- ldr  r5, [r0]
- ldr  sp, [r5]
- 
- pop  {lr}
+ push	{lr}
+ ldr	r0, = readyQueue	// Load readyQueue into r0
+ bl		List_removeFirst
+ mov	r5, r0
+ ldr	r5, [r5]
+ ldr	sp, [r5, #4]
+
+ ldr	r1, = runningTcb
+ str	r0, [r1]
+ ldr	r0, = readyQueue
+ mov	r1, r4
+
+ bl		List_addLast
+ pop	{lr}
  pop	{r4-r11}
  pop	{r0-r3}
  pop	{r12}

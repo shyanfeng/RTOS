@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="4.9.3 -mcpu=cortex-m4 -mthumb -g2 -Map=Test01.map -O0 --gc-sections -LC:/Users/Feng/CoIDE/workspace/7-8 Scheduler -TC:/Users/Feng/CoIDE/workspace/7-8 Scheduler/stm32f407vg_flash.ld -g">
+      <target file="Test01.elf" lastModified="14f28dd4095">
+         <source file="..\obj\assembly.o" lastModified="14f28dd3405"/>
+         <source file="..\obj\Mailbox.o" lastModified="14f28dd2d2c"/>
+         <source file="..\obj\LinkedList.o" lastModified="14f28dd2cec"/>
+         <source file="..\obj\Task.o" lastModified="14f28dd2c81"/>
+         <source file="..\obj\SD1.o" lastModified="14f28dd2eac"/>
+         <source file="..\obj\stm32f4xx_hal_cortex.o" lastModified="14f28dd34ed"/>
+         <source file="..\obj\Scheduler.o" lastModified="14f28dd3688"/>
+         <source file="..\obj\Semaphore.o" lastModified="14f28dd359a"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="14f28dd355a"/>
+         <source file="..\obj\SD5.o" lastModified="14f28dd3103"/>
+         <source file="..\obj\stm32f4xx_hal.o" lastModified="14f28dd31df"/>
+         <source file="..\obj\Mutex.o" lastModified="14f28dd2c33"/>
+         <source file="..\obj\timeDelay.o" lastModified="14f28dd32e5"/>
+         <source file="..\obj\stm32f4xx_hal_gpio.o" lastModified="14f28dd3677"/>
+         <source file="..\obj\SD2.o" lastModified="14f28dd3032"/>
+         <source file="..\obj\RunningLight.o" lastModified="14f28dd2bd9"/>
+         <source file="..\obj\SD6.o" lastModified="14f28dd3299"/>
+         <source file="..\obj\initGPIO.o" lastModified="14f28dd2dee"/>
+         <source file="..\obj\stm32f4xx_hal_rcc.o" lastModified="14f28dd33f1"/>
+         <source file="..\obj\startup_stm32f429xx.o" lastModified="14f28dd3044"/>
+         <source file="..\obj\main.o" lastModified="14f28dd2f74"/>
+      </target>
+   </processor>
+</history>

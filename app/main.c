@@ -22,29 +22,26 @@ int dummy(int value){
 }
 
 int main(void){
-	//TaskBlock tb_LED1;
-	//TaskBlock tb_LED2;
-	//TaskBlock tb_LED5;
-	//initLED();
-	//initLED2();
-	//initLED5();
-	//initLED6();
-	//initPushButton1();
-	//initTaskBlock(&tb_LED1);
-	//initTaskBlock(&tb_LED2);
-	//initTaskBlock(&tb_LED5);
-
 	initSysTick();
 	initTcb();
 	//taskSwitch();
 	//testFunc();
 
+	TaskBlock tb_LED1;
+	TaskBlock tb_LED2;
+	TaskBlock tb_LED5;
+	initLED();
+	initLED2();
+	initLED5();
+	initPushButton1();
+	initTaskBlock(&tb_LED1);
+	initTaskBlock(&tb_LED2);
+	initTaskBlock(&tb_LED5);
+
   while(1){
-	//RunningLight(&tb_LED1);
-	//SD1(&tb_LED1);
-    //SD2(&tb_LED2);
-    //SD5(&tb_LED5);
-    //SD6();
+	SD1(&tb_LED1);
+    SD2(&tb_LED2);
+    SD5(&tb_LED5);
   }
 }
 

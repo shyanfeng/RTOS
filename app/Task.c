@@ -1,15 +1,18 @@
 #include <stdint.h>
 #include "Task.h"
+#include "LinkedList.h"
 
 uint8_t taskOneStack[1028];
 uint8_t taskTwoStack[1028];
 
+LinkedList *readyQueue;
+
 Tcb mainTcb;
 Tcb taskOneTcb;
 Tcb taskTwoTcb;
-Tcb *readyQueue;
+//Tcb *readyQueue;
 Tcb *runningQueue;
-Tcb runningTcb;
+Tcb *runningTcb;
 
 CpuContext *cc = (CpuContext *)((uint32_t)(&taskOneStack[1028]) - sizeof(CpuContext));
 
@@ -42,6 +45,9 @@ void initTcb(){
   cc->PC = (uint32_t)taskOne;
   cc->xPSR = 0x01000000;
 
-  runningQueue = &mainTcb;
-  readyQueue = &taskOneTcb;
+  //runningQueue = &mainTcb;
+  //readyQueue = &taskOneTcb;
+  runningTcb = &mainTcb;
+  createLinkedList(&readyQueue);
+  List_addLast(&readyQueue, &taskOneTcb);
 }
